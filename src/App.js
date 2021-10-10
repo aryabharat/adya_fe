@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import RockPaperScissors from './components/RockPaperScissors/RockpaperScissors'
+import Leaderbaord from './components/Leaderboard/Leaderbaord'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+           <RockPaperScissors/>
+          </Route>
+          <Route exact path="/leaderboard">
+           <Leaderbaord/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
   );
 }
 
